@@ -1,0 +1,42 @@
+create database  SchoolMgmt;
+use schoolmgmt;
+
+create table student ( 
+	id INT(10) AUTO_INCREMENT, 
+	dept char(30), 
+	name char(30),
+    nid char(30),
+    birth char(30),
+    address char(30),
+	PRIMARY KEY(id) 
+);
+
+
+create table teacher ( 
+	id INT(10) AUTO_INCREMENT, 
+	dept char(30), 
+	name char(30),
+    nid char(30),
+    birth char(30),
+    address char(30),
+	PRIMARY KEY(id) 
+);
+
+create table  course ( 
+	id INT(10) AUTO_INCREMENT, 
+	dept char(30), 
+	title char(30),
+    credit int(30),
+    syllabus char(30),
+	PRIMARY KEY(id) 
+);
+
+create table  payment ( 
+	payment_id INT(10) AUTO_INCREMENT,
+    student_id INT(11),
+	amount int,
+    date char(30),
+	PRIMARY KEY(payment_id),
+    
+    CONSTRAINT fk1 FOREIGN KEY(student_id) REFERENCES student(id)
+);
